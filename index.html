@@ -19,6 +19,9 @@
             pointer-events: auto;
             display: flex; /* Show when open */
         }
+        .hidden {
+            display: none;
+        }
     </style>
 
 <title>Floating Facebook Badge</title>
@@ -28,8 +31,8 @@
     right: 20px;
     bottom: 20px;
     z-index: 9999;
-    background: #1f2937;   /* 👈 สีพื้นหลังเข้ม (เทาเข้ม) */
-    border-radius: 16px;   /* 👈 ทำเป็นกล่องโค้งมน */
+    background: #1f2937;
+    border-radius: 16px;
     box-shadow: 0 8px 24px rgba(0,0,0,.25);
     display: flex;
     align-items: center;
@@ -44,13 +47,13 @@
     align-items: center;
     gap: 10px;
     text-decoration: none;
-    color: #ffffff;   /* 👈 ตัวอักษรสีขาว */
+    color: #ffffff;
     font-weight: 600;
     line-height: 1.4;
   }
 
   .floating-badge a:hover {
-    color: #93c5fd;   /* 👈 hover แล้วเปลี่ยนเป็นฟ้าอ่อน */
+    color: #93c5fd;
   }
 
   .floating-badge .fb-icon {
@@ -65,7 +68,7 @@
     font-size: 22px;
     line-height: 1;
     cursor: pointer;
-    color: #d1d5db;   /* ปุ่มปิดสีเทาอ่อน */
+    color: #d1d5db;
     padding: 8px;
     border-radius: 999px;
   }
@@ -80,19 +83,34 @@
 <body class="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50">
 
     <header class="bg-white/80 backdrop-blur-md shadow-lg sticky top-0 z-50">
-        <div class="container mx-auto px-4 py-6 text-center">
+        <div class="container mx-auto px-4 py-6 text-center relative">
+            <div class="absolute top-4 right-4 flex space-x-2">
+                <button id="lang-th-btn" class="px-4 py-2 rounded-full font-bold text-sm bg-blue-600 text-white shadow-lg transition-all hover:bg-blue-700">ไทย</button>
+                <button id="lang-en-btn" class="px-4 py-2 rounded-full font-bold text-sm bg-gray-200 text-gray-700 shadow-lg transition-all hover:bg-gray-300">ENG</button>
+            </div>
             <h1 class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 via-green-600 to-orange-500 bg-clip-text text-transparent">
-                การท่องเที่ยวล่องแพและศิลปะวัฒนธรรมวิถีชุมชน <br>บ้านมหาสอน
+                <span data-lang="th">การท่องเที่ยวล่องแพและศิลปะวัฒนธรรมวิถีชุมชน <br>บ้านมหาสอน</span>
+                <span data-lang="en" class="hidden">Mahasorn Village Community-Based Ecotourism <br> and Cultural Arts</span>
             </h1>
             <p class="text-gray-600 mt-2 text-lg">
-                ค้นพบความงามและเสน่ห์ของ ชุมชนเชิงเกษตร ในมุมมองใหม่
+                <span data-lang="th">ค้นพบความงามและเสน่ห์ของชุมชนเชิงเกษตรในมุมมองใหม่</span>
+                <span data-lang="en" class="hidden">Discover the beauty and charm of an agricultural community from a new perspective.</span>
             </p>
         </div>
     </header>
 
-    <section class="py-12 bg-white">
+    
+
+    <section class="relative h-[500px] md:h-[650px] flex items-center justify-center overflow-hidden">
+        <img src="assets/banner.png" alt="Thai Travel Banner" class="absolute inset-0 w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-r from-black/50 to-black/20"></div>
+    </section>
+<section class="py-12 bg-white">
         <div class="container mx-auto px-4">
-            <h2 class="text-2xl font-bold text-center mb-8">3Dโมเดลสินค้าตะกล้าสานบ้านมหาสอน</h2>
+            <h2 class="text-2xl font-bold text-center mb-8">
+                <span data-lang="th">3D โมเดลสินค้าตะกร้าสานบ้านมหาสอน</span>
+                <span data-lang="en" class="hidden">3D Models of Mahasorn Village Woven Baskets</span>
+            </h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div class="bg-gray-50 rounded-xl shadow-md p-4">
                     <model-viewer 
@@ -104,7 +122,10 @@
                         ar 
                         style="width:100%; height:300px;">
                     </model-viewer>
-                    <h3 class="text-lg font-semibold mt-3 text-center">โมเดล 1</h3>
+                    <h3 class="text-lg font-semibold mt-3 text-center">
+                        <span data-lang="th">โมเดล 1</span>
+                        <span data-lang="en" class="hidden">Model 1</span>
+                    </h3>
                 </div>
                 <div class="bg-gray-50 rounded-xl shadow-md p-4">
                     <model-viewer 
@@ -116,7 +137,10 @@
                         ar 
                         style="width:100%; height:300px;">
                     </model-viewer>
-                    <h3 class="text-lg font-semibold mt-3 text-center">โมเดล 2</h3>
+                    <h3 class="text-lg font-semibold mt-3 text-center">
+                        <span data-lang="th">โมเดล 2</span>
+                        <span data-lang="en" class="hidden">Model 2</span>
+                    </h3>
                 </div>
                 <div class="bg-gray-50 rounded-xl shadow-md p-4">
                     <model-viewer 
@@ -128,17 +152,14 @@
                         ar 
                         style="width:100%; height:300px;">
                     </model-viewer>
-                    <h3 class="text-lg font-semibold mt-3 text-center">โมเดล 3</h3>
+                    <h3 class="text-lg font-semibold mt-3 text-center">
+                        <span data-lang="th">โมเดล 3</span>
+                        <span data-lang="en" class="hidden">Model 3</span>
+                    </h3>
                 </div>
             </div>
         </div>
     </section>
-
-    <section class="relative h-[500px] md:h-[650px] flex items-center justify-center overflow-hidden">
-        <img src="assets/banner.png" alt="Thai Travel Banner" class="absolute inset-0 w-full h-full object-cover">
-        <div class="absolute inset-0 bg-gradient-to-r from-black/50 to-black/20"></div>
-    </section>
-
     <section class="py-16">
         <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             
@@ -147,8 +168,10 @@
                     <img src="assets/Image1/image1.png" alt="เกาะพีพี" class="w-full h-64 object-cover">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                     <div class="absolute bottom-4 left-4 text-white">
-                        <h3 class="text-2xl font-bold">วัดมหาสอน</h3>
-                        
+                        <h3 class="text-2xl font-bold">
+                            <span data-lang="th">วัดมหาสอน</span>
+                            <span data-lang="en" class="hidden">Wat Mahasorn</span>
+                        </h3>
                     </div>
                 </div>
                 <div class="p-6">
@@ -156,8 +179,10 @@
                         
                         
                     </div>
-                    <p class="text-gray-600 mb-4">วัดมหาสอน ตั้งอยู่เลขที่ 47 บ้านมหาสอน หมู่ที่ 5 ตำบลมหาสอน อำเภอบ้านหมี่ จังหวัดลพบุรี  สังกัดคณะสงฆ์มหานิกาย 
-มีที่ดินตั้งวัด เนื้อที่ 26 ไร่ 2 งาน 22 ตารางวา...</p>
+                    <p class="text-gray-600 mb-4">
+                        <span data-lang="th">วัดมหาสอน ตั้งอยู่เลขที่ 47 บ้านมหาสอน หมู่ที่ 5 ตำบลมหาสอน อำเภอบ้านหมี่ จังหวัดลพบุรี สังกัดคณะสงฆ์มหานิกาย มีที่ดินตั้งวัด เนื้อที่ 26 ไร่ 2 งาน 22 ตารางวา...</span>
+                        <span data-lang="en" class="hidden">Wat Mahasorn, located at 47 Mahasorn Village, is a Mahayana Buddhist temple situated on 26 rai, 2 ngan, and 22 square wah of land...</span>
+                    </p>
                 </div>
             </div>
             
@@ -166,7 +191,10 @@
                     <img src="assets/Image2/a94972_03862d4fa46c4e478c230fc1e28f154e~mv2.avif" alt="ดอยอินทนนท์" class="w-full h-64 object-cover">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                     <div class="absolute bottom-4 left-4 text-white">
-                        <h3 class="text-2xl font-bold">เครื่องจักสานหวายบ้านที่วิสาหกิจจักรสานหวายบ้านมหาสอน</h3>
+                        <h3 class="text-2xl font-bold">
+                            <span data-lang="th">เครื่องจักสานหวายที่วิสาหกิจจักรสานหวายบ้านมหาสอน</span>
+                            <span data-lang="en" class="hidden">Mahasorn Village Wicker Handicrafts</span>
+                        </h3>
                         
                     </div>
                 </div>
@@ -174,7 +202,10 @@
                     <div class="flex items-center justify-between mb-4">
                         
                     </div>
-                    <p class="text-gray-600 mb-4">งานจักสานช่างฝีมือพื้นบ้านของบ้านขอม ตำบลมหาสอน อำเภอบ้านหมี่ จังหวัดลพบุรี มีเอกลักษณ์ เกิดจากการผสมผสานภูมิปัญญาชาวบ้าน หรือภูมิปัญญาพื้นบ้าน ที่นำวัตถุดิบใน ท้องถิ่นมาประดิษฐ์ มุ่งเน้นความละเอียดอ่อน ปราณีต ในงานฝีมือเป็นเอกลักษณ์เฉพาะถิ่น...</p>
+                    <p class="text-gray-600 mb-4">
+                        <span data-lang="th">งานจักสานเป็นงานฝีมือพื้นบ้านของชาวบ้านตำบลมหาสอนที่มีเอกลักษณ์เฉพาะตัว เกิดจากการผสมผสานภูมิปัญญาท้องถิ่น...</span>
+                        <span data-lang="en" class="hidden">Wicker handicrafts are a unique local art form in Mahasorn Village, blending indigenous wisdom to create delicate and intricate pieces...</span>
+                    </p>
                 </div>
             </div>
 
@@ -183,7 +214,10 @@
                     <img src="assets/Image3/image.png" alt="วัดร่องขุ่น" class="w-full h-64 object-cover">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                     <div class="absolute bottom-4 left-4 text-white">
-                        <h3 class="text-2xl font-bold">งานศิลปะจากใบไม้ลงผืนผ้า </h3>
+                        <h3 class="text-2xl font-bold">
+                            <span data-lang="th">งานศิลปะจากใบไม้ลงบนผืนผ้า</span>
+                            <span data-lang="en" class="hidden">Leaf Art on Fabric</span>
+                        </h3>
                         
                     </div>
                 </div>
@@ -191,8 +225,10 @@
                     <div class="flex items-center justify-between mb-4">
                         
                     </div>
-                    <p class="text-gray-600 mb-4">ผ้าพิมพ์ลายใบไม้คือ…
-คือการถ่ายสีและลวดลายจากใบไม้ ดอกไม้ ลงบนผืนผ้า ผ่านกระบวนการง่ายๆ ด้วยวิธีธรรมชาติ...</p>
+                    <p class="text-gray-600 mb-4">
+                        <span data-lang="th">ผ้าพิมพ์ลายใบไม้คือการถ่ายสีและลวดลายจากใบไม้และดอกไม้ลงบนผืนผ้า ผ่านกระบวนการธรรมชาติ...</span>
+                        <span data-lang="en" class="hidden">Leaf-printed fabric is a process of transferring colors and patterns from leaves and flowers onto fabric using natural methods...</span>
+                    </p>
                 </div>
             </div>
 
@@ -201,7 +237,10 @@
                     <img src="assets/Image4/0bdcf9d0-780b-11f0-bc52-5749fece1bbc_webp_original.avif" alt="เขื่อนรัชชประภา" class="w-full h-64 object-cover">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                     <div class="absolute bottom-4 left-4 text-white">
-                        <h3 class="text-2xl font-bold">สวนอินทผาลัมชมชิม</h3>
+                        <h3 class="text-2xl font-bold">
+                            <span data-lang="th">สวนอินทผาลัมชมชิม</span>
+                            <span data-lang="en" class="hidden">"Chom Chim" Date Palm Garden</span>
+                        </h3>
                         
                     </div>
                 </div>
@@ -209,7 +248,10 @@
                     <div class="flex items-center justify-between mb-4">
                        
                     </div>
-                    <p class="text-gray-600 mb-4">สวนลุงจ้อยเป็นสวนอินทผาลัมขนาดใหญ่ ที่นี่มีอินทผาลัมหลากหลายสายพันธุ์ให้เลือกชิมกันแบบสดๆ ทั้งบาฮี โคไนซี่ อัมเอ็ดดาฮาน  บอกเลยว่า หวาน กรอบ อร่อย ชื่นใจสุดๆ...</p>
+                    <p class="text-gray-600 mb-4">
+                        <span data-lang="th">สวนลุงจ้อยเป็นสวนอินทผาลัมขนาดใหญ่ มีหลากหลายสายพันธุ์ให้เลือกชิมกันแบบสดๆ ทั้งบาฮี โคไนซี่ และอัมเอ็ดดาฮาน...</span>
+                        <span data-lang="en" class="hidden">Lung Joy's Garden is a large date palm farm with many varieties like Bahy, Khoneizy, and Am-ed-dahan for visitors to sample...</span>
+                    </p>
                 </div>
             </div>
 
@@ -218,7 +260,10 @@
                     <img src="assets/Image5/Baner.jpg" alt="ตลาดน้ำดำเนินสะดวก" class="w-full h-64 object-cover">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                     <div class="absolute bottom-4 left-4 text-white">
-                        <h3 class="text-2xl font-bold">บ้านหลบโจร</h3>
+                        <h3 class="text-2xl font-bold">
+                            <span data-lang="th">บ้านหลบโจร</span>
+                            <span data-lang="en" class="hidden">The "Thief-Hiding" House</span>
+                        </h3>
                         
                     </div>
                 </div>
@@ -226,8 +271,10 @@
                     <div class="flex items-center justify-between mb-4">
                         
                     </div>
-                    <p class="text-gray-600 mb-4">ไปชมบ้านไทยแบบโบราณ ตั้งอยู่ริมฝั่งคลอง ตัวบ้านหลังใหญ่ งดงาม คลาสสิค ภายในบ้านที่มีช่องสำหรับหลบโจรด้วย ทายาทของบ้านเล่าให้ฟังว่า 
-                        หลุมหลบโจร เคยได้ใช้งานจริง 1ครั้ง ในปี2514...</p>
+                    <p class="text-gray-600 mb-4">
+                        <span data-lang="th">ชมบ้านไทยโบราณที่ตั้งอยู่ริมคลอง ตัวบ้านขนาดใหญ่ งดงามและคลาสสิก ภายในมีช่องสำหรับหลบโจร...</span>
+                        <span data-lang="en" class="hidden">Visit a beautiful and classic ancient Thai house on the canal. Inside, there’s a secret compartment for hiding from thieves...</span>
+                    </p>
                 </div>
             </div>
 
@@ -236,7 +283,10 @@
                     <img src="assets/Image6/bbb.jpg" alt="อุทยานประวัติศาสตร์สุโขทัย" class="w-full h-64 object-cover">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                     <div class="absolute bottom-4 left-4 text-white">
-                        <h3 class="text-2xl font-bold">วัดห้วยแก้ว</h3>
+                        <h3 class="text-2xl font-bold">
+                            <span data-lang="th">วัดห้วยแก้ว</span>
+                            <span data-lang="en" class="hidden">Wat Huai Kaeo</span>
+                       </h3>
                        
                     </div>
                 </div>
@@ -244,8 +294,10 @@
                     <div class="flex items-center justify-between mb-4">
                        
                     </div>
-                    <p class="text-gray-600 mb-4">วัดห้วยแก้ว ตั้งอยู่ที่ ตำบลมหาสอน อำเภอบ้านหมี่ จังหวัดลพบุรี เป็นวัดที่มีการผสมผสานสถาปัตยกรรมขอมทั้งแบบไทย 
-                        เขมร และเมียนม่าเข้าไว้ด้วยกัน โครงสร้างคือเจดีย์ย่อมุมไม้สิบสองแบบสุโขทัย แต่ลวยลายที่อยู่รอบนอกนั้น จะเป็นแบบของขอม มีอายุกว่า 140 ปี...</p>
+                    <p class="text-gray-600 mb-4">
+                        <span data-lang="th">วัดห้วยแก้วตั้งอยู่ที่ตำบลมหาสอน อำเภอบ้านหมี่ จังหวัดลพบุรี เป็นวัดที่มีการผสมผสานสถาปัตยกรรมขอม ไทย และเมียนมาร์เข้าไว้ด้วยกัน...</span>
+                        <span data-lang="en" class="hidden">Located in Mahasorn Village, Wat Huai Kaeo combines Khmer, Thai, and Myanmar architectural styles, featuring a chedi with intricate carvings...</span>
+                    </p>
                 </div>
             </div>
 
@@ -254,7 +306,10 @@
                     <img src="assets/Image7/image4.png" alt="หาดพัทยา" class="w-full h-64 object-cover">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                     <div class="absolute bottom-4 left-4 text-white">
-                        <h3 class="text-2xl font-bold">ลุ่มแม่น้ำบางขาม บ้านบางพึ่ง</h3>
+                        <h3 class="text-2xl font-bold">
+                            <span data-lang="th">ลุ่มแม่น้ำบางขาม บ้านบางพึ่ง</span>
+                            <span data-lang="en" class="hidden">Bang Kham River Basin, Ban Bang Phueng</span>
+                        </h3>
                         
                     </div>
                 </div>
@@ -262,8 +317,10 @@
                     <div class="flex items-center justify-between mb-4">
                         
                     </div>
-                    <p class="text-gray-600 mb-4">ตั้งอยู่หมู่ 1 ต.บางพึ่ง อำเภอบ้านหมี่ จ.ลพบุรี เป็นทางสัญจรเสมือนสายโลหิตสำคัญของชาวบางพึ่ง 
-                        มีลำคลองสาขาต่างๆ ไหลลัดเลาะไปตามท้องทุ่งทำให้ชาวบ้านหมี่อุดมสมบูรณ์...</p>
+                    <p class="text-gray-600 mb-4">
+                        <span data-lang="th">ตั้งอยู่หมู่ที่ 1 ตำบลบางพึ่ง อำเภอบ้านหมี่ จังหวัดลพบุรี เป็นเส้นทางสัญจรที่สำคัญเสมือนเป็นสายเลือดหล่อเลี้ยงชีวิตของชาวบางพึ่ง...</span>
+                        <span data-lang="en" class="hidden">Located at Moo 1, Ban Phueng Sub-district, Ban Mi District, Lopburi Province, this river basin is a vital route and the lifeblood of the Bang Phueng community...</span>
+                    </p>
                 </div>
             </div>
 
@@ -272,7 +329,10 @@
                     <img src="assets/Image8/bavb.jpg" alt="ปราสาทหินพนมรุ้ง" class="w-full h-64 object-cover">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                     <div class="absolute bottom-4 left-4 text-white">
-                        <h3 class="text-2xl font-bold">บ้านสวนขวัญ</h3>
+                        <h3 class="text-2xl font-bold">
+                            <span data-lang="th">บ้านสวนขวัญ</span>
+                            <span data-lang="en" class="hidden">Baan Suan Khwan</span>
+                        </h3>
                         
                     </div>
                 </div>
@@ -280,7 +340,10 @@
                     <div class="flex items-center justify-between mb-4">
                        
                     </div>
-                    <p class="text-gray-600 mb-4">บ้านสวนขวัญเป็นแหล่งท่องเที่ยวนววิถี เกษตรชุมชน ติดแม่น้ำบางขาม จัดกิจกรรมหลากหลาย ฝึกอาชีพ...</p>
+                    <p class="text-gray-600 mb-4">
+                        <span data-lang="th">บ้านสวนขวัญเป็นแหล่งท่องเที่ยวแบบนววิถีเชิงเกษตรชุมชน ตั้งอยู่ริมแม่น้ำบางขาม มีกิจกรรมหลากหลาย...</span>
+                        <span data-lang="en" class="hidden">Baan Suan Khwan is a modern agricultural community tourism site located by the Bang Kham River, offering various activities and workshops...</span>
+                    </p>
                 </div>
             </div>
 
@@ -289,7 +352,10 @@
                     <img src="assets/Image9/bar.png" alt="สะพานมอญ" class="w-full h-64 object-cover">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                     <div class="absolute bottom-4 left-4 text-white">
-                        <h3 class="text-2xl font-bold">โรงสีไทยสมบูรณ์พัฒนา</h3>
+                        <h3 class="text-2xl font-bold">
+                            <span data-lang="th">โรงสีไทยสมบูรณ์พัฒนา</span>
+                            <span data-lang="en" class="hidden">Thai Somboon Phatthana Rice Mill</span>
+                        </h3>
                         
                     </div>
                 </div>
@@ -297,7 +363,10 @@
                     <div class="flex items-center justify-between mb-4">
                       
                     </div>
-                    <p class="text-gray-600 mb-4">ส่วนมากเป็นสถานที่ที่มีของเก่าๆ สมัยนานมากๆ...</p>
+                    <p class="text-gray-600 mb-4">
+                        <span data-lang="th">แหล่งรวบรวมของเก่าและของโบราณที่หาชมได้ยาก เป็นอีกหนึ่งสถานที่ท่องเที่ยวที่ควรมาเยี่ยมชม</span>
+                        <span data-lang="en" class="hidden">A collection of rare ancient and vintage items, this is a must-visit tourist attraction.</span>
+                    </p>
                 </div>
             </div>
         </div>
@@ -306,7 +375,10 @@
     <div id="phiPhiModal" class="modal fixed inset-0 bg-black/70 flex items-center justify-center z-50">
         <div class="bg-white rounded-2xl shadow-lg w-11/12 md:w-2/3 lg:w-1/2 max-h-[90vh] overflow-y-auto">
             <div class="flex justify-between items-center p-4 border-b">
-                <h2 class="text-xl font-bold">วัดมหาสอน</h2>
+                <h2 class="text-xl font-bold">
+                    <span data-lang="th">วัดมหาสอน</span>
+                    <span data-lang="en" class="hidden">Wat Mahasorn</span>
+                </h2>
                 <button onclick="closeModal('phiPhiModal')" class="text-gray-500 hover:text-red-500 text-2xl">&times;</button>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 p-4">
@@ -316,18 +388,26 @@
                 <img src="assets/Image1/20250810_105609.jpg" class="rounded-lg object-cover">
             </div>
             <div class="p-4">
-                <h3 class="text-lg font-semibold mb-2">รายละเอียด</h3>
-                <p class="text-gray-700 leading-relaxed"><p style="text-indent: 2.5em;">วัดมหาสอน ตั้งอยู่เลขที่ 47 บ้านมหาสอน หมู่ที่ 5 ตำบลมหาสอน อำเภอบ้านหมี่ จังหวัดลพบุรี  สังกัดคณะสงฆ์มหานิกาย 
-มีที่ดินตั้งวัด เนื้อที่ 26 ไร่ 2 งาน 22 ตารางวา  พื้นที่ตั้งวัดเป็นที่ราบลุ่ม ริมแม่น้ำบางขาม สมัยก่อนวัดถูกน้ำท่วมเป็นประจำ 
-
-อาคารเสนาสนะต่างๆ มีอุโบสถ กว้าง 4 เมตร ยาว  เมตร สร้างเมื่อปี 2511  ศาลาการเปรียญ กว้าง 11.5 เมตร ยาว 23.5 เมตร สร้างเมื่อปี 2493 เป็นอาคารไม้ มีหอสวดมนต์เก่าที่สร้างในปี 2485 มีกุฎิสงฆ์ 3 หลัง สำหรับปูชนียวัตถุ มีประประธานในอุโบสถ ขนาดพระเพลา กว้าง3ศอก 1 คืนเศษ
-</p>
-​
-
-<br><p style="text-indent: 2.5em;">วัดมหาสอนสร้างขึ้นเป็นวัดนับตั้งแต่ พ.ศ. 2408 ชาวบ้านในตำบลร่วมกันสร้าง  โดยมีหลวงพ่อเดช มาอยู่ปกครองวัด
-เป็นรูปแรก  ได้ดำเนินการก่อสร้างเสนาสนะสืบมา  ต่อมาได้รับพระราชทานวิสุงคามสีมา เมื่อวันที่ 4 พฤศจิกายน 2509
-เขตวิสุงคามสีมากว้าง 26 เมตร ยาว36 เมตร มีภิกษุจำพรรษา 13 รูป</p>
-                
+                <h3 class="text-lg font-semibold mb-2">
+                    <span data-lang="th">รายละเอียด</span>
+                    <span data-lang="en" class="hidden">Details</span>
+                </h3>
+                <p class="text-gray-700 leading-relaxed">
+                    <span data-lang="th">
+                        <p style="text-indent: 2.5em;">วัดมหาสอน ตั้งอยู่ที่บ้านมหาสอน เลขที่ 47 หมู่ที่ 5 ตำบลมหาสอน อำเภอบ้านหมี่ จังหวัดลพบุรี สังกัดคณะสงฆ์มหานิกาย มีที่ดิน 26 ไร่ 2 งาน 22 ตารางวา พื้นที่ตั้งวัดเป็นที่ราบลุ่มริมแม่น้ำบางขาม ซึ่งในอดีตมักเกิดน้ำท่วมเป็นประจำ</p>
+                        <br>
+                        <p style="text-indent: 2.5em;">อาคารเสนาสนะต่างๆ ประกอบด้วย อุโบสถที่สร้างในปี พ.ศ. 2511, ศาลาการเปรียญสร้างด้วยไม้ในปี พ.ศ. 2493, หอสวดมนต์เก่าสร้างในปี พ.ศ. 2485 และกุฏิสงฆ์ 3 หลัง ส่วนพระประธานในอุโบสถมีขนาดหน้าตักกว้าง 3 ศอก</p>
+                        <br>
+                        <p style="text-indent: 2.5em;">วัดมหาสอนสร้างขึ้นในปี พ.ศ. 2408 โดยชาวบ้านในตำบลได้ร่วมกันสร้างและมีหลวงพ่อเดชมาเป็นเจ้าอาวาสรูปแรก ได้รับพระราชทานวิสุงคามสีมาในปี พ.ศ. 2509 เขตวิสุงคามสีมากว้าง 26 เมตร ยาว 36 เมตร ปัจจุบันมีพระภิกษุจำพรรษาอยู่ 13 รูป</p>
+                    </span>
+                    <span data-lang="en" class="hidden">
+                        <p style="text-indent: 2.5em;">Wat Mahasorn is located at 47 Mahasorn Village, Moo 5, Mahasorn Sub-district, Ban Mi District, Lopburi Province. It is a Mahayana Buddhist temple situated on 26 rai, 2 ngan, and 22 square wah of land. The temple grounds are on a low-lying plain next to the Bang Kham River, which was regularly flooded in the past.</p>
+                        <br>
+                        <p style="text-indent: 2.5em;">The temple buildings include the ubosot (ordination hall) built in 1968, a wooden sermon hall built in 1950, an old prayer hall from 1942, and three monk dormitories. The principal Buddha image in the ubosot has a lap width of 3 sok (approximately 1.5 meters).</p>
+                        <br>
+                        <p style="text-indent: 2.5em;">Wat Mahasorn was established in 1865 by the local villagers. Luang Por Det was the first abbot and oversaw the construction of the temple's structures. The temple received a royal decree for its ordination boundary in 1966, measuring 26 meters wide and 36 meters long. Currently, there are 13 monks residing at the temple.</p>
+                    </span>
+                </p>
             </div>
         </div>
     </div>
@@ -335,7 +415,10 @@
     <div id="doiInthanonModal" class="modal fixed inset-0 bg-black/70 flex items-center justify-center z-50">
         <div class="bg-white rounded-2xl shadow-lg w-11/12 md:w-2/3 lg:w-1/2 max-h-[90vh] overflow-y-auto">
             <div class="flex justify-between items-center p-4 border-b">
-                <h2 class="text-xl font-bold">เครื่องจักสานหวายบ้านที่วิสาหกิจจักรสานหวายบ้านมหาสอน</h2>
+                <h2 class="text-xl font-bold">
+                    <span data-lang="th">เครื่องจักสานหวายที่วิสาหกิจจักรสานหวายบ้านมหาสอน</span>
+                    <span data-lang="en" class="hidden">Mahasorn Village Wicker Handicrafts</span>
+                </h2>
                 <button onclick="closeModal('doiInthanonModal')" class="text-gray-500 hover:text-red-500 text-2xl">&times;</button>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 p-4">
@@ -345,12 +428,21 @@
                 <img src="assets/Image2/20250810_112216.jpg" class="rounded-lg object-cover">
             </div>
             <div class="p-4">
-                <h3 class="text-lg font-semibold mb-2">รายละเอียด</h3>
+                <h3 class="text-lg font-semibold mb-2">
+                    <span data-lang="th">รายละเอียด</span>
+                    <span data-lang="en" class="hidden">Details</span>
+                </h3>
                 <p class="text-gray-700 leading-relaxed">
-                    <p style="text-indent: 2.5em;">เครื่องจักสาน เป็นการงานช่างฝีมือพื้นบ้านของชาวบ้านตำบลมหาสอน อำเภอบ้านหมี่ จังหวัดลพบุรี เกิดขึ้นประมาณ ปี พ.ศ. 2495 โดย คือคุณป้าโถม ศรีวิฑรูย์ 
-                    เป็นผู้ถ่ายทอดให้แก่ นางชะลอ ทนทองคำ เมื่อนางชลอ ทนทองคำ ได้รับการถ่ายทอดตั้งแต่สมัยเด็ก ก็ได้ฝึกการทำตะกร้าหวายจนมีความชำนาญ จึงได้ถ่ายทอดต่อให้กับลูก หลาน 
-                    และผู้สนใจในหมู่บ้าน ต่อมาจึงร่วมกันคิดจัดตั้งกลุ่มสหกรณ์ขึ้น ชื่อกลุ่มจักสานตะกร้าหวายลายวิจิตร ตั้งอยู่ ณ บ้านเลขที่ 15 หมู่ที่ 6 ตำบลมหาสอน อำเภอบ้านหมี่ จังหวัดลพบุรี และนางชะลอ ทนทองคำ 
-                    เป็นประธานกลุ่ม ผลิตผลงานเป็นที่รู้จักของคนทั่วไปจนได้รับคัดสรรให้เป็นสุดยอดหนึ่งตำบล หนึ่งผลิตภัณฑ์ไทย ระดับ 4 ดาว OTOP เมื่อปี พ.ศ ๒๕๔๖ และได้รับ ระดับ 5 ดาว เมื่อปี พ.ศ. 2549
+                    <span data-lang="th">
+                        <p style="text-indent: 2.5em;">เครื่องจักสานเป็นงานหัตถกรรมพื้นบ้านของชาวบ้านตำบลมหาสอน อำเภอบ้านหมี่ จังหวัดลพบุรี ซึ่งเริ่มขึ้นประมาณปี พ.ศ. 2495 โดยคุณป้าโถม ศรีวิฑรูย์ ได้ถ่ายทอดความรู้ให้กับคุณยายชะลอ ทนทองคำ</p>
+                        <p style="text-indent: 2.5em;">หลังจากที่คุณยายชะลอได้รับการถ่ายทอดตั้งแต่เด็กและมีความชำนาญในการทำตะกร้าหวาย จึงได้นำความรู้นี้ไปสอนต่อให้ลูกหลานและผู้ที่สนใจในหมู่บ้าน จนมีการรวมตัวกันจัดตั้งเป็นกลุ่มสหกรณ์ที่มีชื่อว่า "กลุ่มจักสานตะกร้าหวายลายวิจิตร" ตั้งอยู่ที่บ้านเลขที่ 15 หมู่ที่ 6 ตำบลมหาสอน และมีคุณยายชะลอเป็นประธานกลุ่ม</p>
+                        <p style="text-indent: 2.5em;">ผลงานของกลุ่มเป็นที่รู้จักอย่างกว้างขวาง และได้รับการคัดเลือกให้เป็นสุดยอดหนึ่งตำบล หนึ่งผลิตภัณฑ์ (OTOP) ระดับ 4 ดาว ในปี พ.ศ. 2546 และพัฒนาสู่ระดับ 5 ดาว ในปี พ.ศ. 2549</p>
+                    </span>
+                    <span data-lang="en" class="hidden">
+                        <p style="text-indent: 2.5em;">Wicker handicrafts are a traditional art form of the people of Mahasorn Sub-district, Ban Mi District, Lopburi Province. The craft began around 1952 when Mrs. Thom Sriwiroon passed on her knowledge to Mrs. Chalo Thanthongkham.</p>
+                        <p style="text-indent: 2.5em;">After mastering the craft of making wicker baskets, Mrs. Chalo began teaching her children, grandchildren, and other interested villagers. This led to the formation of a cooperative group called the "Vichit Wicker Basketry Group," located at 15 Moo 6, Mahasorn Sub-district, with Mrs. Chalo as the group leader.</p>
+                        <p style="text-indent: 2.5em;">The group's products have become widely known and were selected as a 4-star OTOP (One Tambon One Product) in 2003 and later as a 5-star OTOP in 2006.</p>
+                    </span>
                 </p>
             </div>
         </div>
@@ -359,7 +451,10 @@
     <div id="watRongKhunModal" class="modal fixed inset-0 bg-black/70 flex items-center justify-center z-50">
         <div class="bg-white rounded-2xl shadow-lg w-11/12 md:w-2/3 lg:w-1/2 max-h-[90vh] overflow-y-auto">
             <div class="flex justify-between items-center p-4 border-b">
-                <h2 class="text-xl font-bold">งานศิลปะจากใบไม้ลงผืนผ้า</h2>
+                <h2 class="text-xl font-bold">
+                    <span data-lang="th">งานศิลปะจากใบไม้ลงบนผืนผ้า</span>
+                    <span data-lang="en" class="hidden">Leaf Art on Fabric</span>
+                </h2>
                 <button onclick="closeModal('watRongKhunModal')" class="text-gray-500 hover:text-red-500 text-2xl">&times;</button>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 p-4">
@@ -369,12 +464,19 @@
                 <img src="assets/Image3/20250810_113024.jpg" class="rounded-lg object-cover">
             </div>
             <div class="p-4">
-                <h3 class="text-lg font-semibold mb-2">รายละเอียด</h3>
+                <h3 class="text-lg font-semibold mb-2">
+                    <span data-lang="th">รายละเอียด</span>
+                    <span data-lang="en" class="hidden">Details</span>
+                </h3>
                 <p class="text-gray-700 leading-relaxed">
-                    <p style="text-indent: 2.5em;">จากใบไม้ธรรมดา ผ่านกระบวนการง่ายๆ ด้วยสิ่งง่ายๆ กลับกลายเป็นความสวยสดงดงามอย่างคาดไม่ถึง ลวดลาย สีสันของใบไม้ที่แสดงอยู่บนผืนผ้า แสดงถึงความละเอียด อ่อนช้อย 
-                    ที่ธรรมชาติสร้างสรรค์ได้ปรากฏขึ้นให้เราได้ประจักษ์ เป็นสิ่งซึ่งไม่อาจอธิบายได้ด้วยคำพูด รูปและสีธรรมชาติ เหล่านี้ให้ความอิ่มเอม ให้ความสุขที่บรรยายได้ยาก เราอาจจะเรียกความสุขแบบนี้ว่าเป็นความสุขภายนอก 
-                    แต่ขณะที่ทำมันมีความสุขอีกอย่างหนึ่งที่เกิดขึ้นควบคู่กันด้วยคือความงดงามของจิตขณะที่เราได้ทำ
-</p>
+                    <span data-lang="th">
+                        <p style="text-indent: 2.5em;">จากการนำใบไม้ธรรมดามาผ่านกระบวนการง่ายๆ ตามธรรมชาติ จนกลายเป็นงานศิลปะที่สวยงามและน่าทึ่ง ลวดลายและสีสันจากธรรมชาติที่ปรากฏบนผืนผ้าสะท้อนถึงความละเอียดอ่อนและปราณีตที่ธรรมชาติได้สร้างสรรค์ขึ้น</p>
+                        <p style="text-indent: 2.5em;">ความงดงามของสีและรูปร่างตามธรรมชาติเหล่านี้มอบความอิ่มเอมและความสุขที่ยากจะบรรยายให้แก่ผู้พบเห็น และขณะที่สร้างสรรค์ผลงานก็ยังได้รับความสุขทางใจควบคู่ไปด้วย</p>
+                    </span>
+                    <span data-lang="en" class="hidden">
+                        <p style="text-indent: 2.5em;">From ordinary leaves, a simple natural process transforms them into stunning and beautiful works of art. The natural patterns and colors that appear on the fabric reflect the delicate and intricate artistry of nature itself.</p>
+                        <p style="text-indent: 2.5em;">The beauty of these natural colors and shapes brings a sense of fulfillment and joy that is difficult to describe. The act of creating this art also brings a deep sense of inner happiness.</p>
+                    </span>
                 </p>
             </div>
         </div>
@@ -383,7 +485,10 @@
     <div id="ratchapraphaDamModal" class="modal fixed inset-0 bg-black/70 flex items-center justify-center z-50">
         <div class="bg-white rounded-2xl shadow-lg w-11/12 md:w-2/3 lg:w-1/2 max-h-[90vh] overflow-y-auto">
             <div class="flex justify-between items-center p-4 border-b">
-                <h2 class="text-xl font-bold">สวนอินทผาลัมชมชิม</h2>
+                <h2 class="text-xl font-bold">
+                    <span data-lang="th">สวนอินทผาลัมชมชิม</span>
+                    <span data-lang="en" class="hidden">"Chom Chim" Date Palm Garden</span>
+                </h2>
                 <button onclick="closeModal('ratchapraphaDamModal')" class="text-gray-500 hover:text-red-500 text-2xl">&times;</button>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 p-4">
@@ -393,15 +498,20 @@
                 <img src="assets/Image4/20250810_114001.jpg" class="rounded-lg object-cover">
             </div>
             <div class="p-4">
-                <h3 class="text-lg font-semibold mb-2">รายละเอียด</h3>
+                <h3 class="text-lg font-semibold mb-2">
+                    <span data-lang="th">รายละเอียด</span>
+                    <span data-lang="en" class="hidden">Details</span>
+                </h3>
                 <p class="text-gray-700 leading-relaxed">
-                    <p style="text-indent: 2.5em;">ใครกำลังมองหาที่แวะเที่ยวใกล้กรุงเทพฯ ฟีลธรรมชาติ แถมได้ชิมผลไม้สดๆ ช้อปผลไม้จากเกษตรกรโดยตรง ต้องมาที่ สวนลุงจ้อย จ.ลพบุรี เลยค่ะ! เพิ่งไปมาแล้วประทับใจ ลุงใจดีมาก 
-                        อินทผาลัมมีให้เลือกหลากหลาย เลยอยากจะมาป้ายยาให้ทุกคนได้ตามรอยกัน
-               </p>
-               <p style="text-indent: 2.5em;">สวนลุงจ้อยเป็นสวนอินทผาลัมขนาดใหญ่ ที่นี่มีอินทผาลัมหลากหลายสายพันธุ์ให้เลือกชิมกันแบบสดๆ ทั้งบาฮี โคไนซี่ อัมเอ็ดดาฮาน  บอกเลยว่า หวาน กรอบ อร่อย ชื่นใจสุดๆ 
-               มีให้เลือกหลายแบบหลายราคา ชิมได้จนแน่ใจแล้วค่อยซื้อ ที่สำคัญคือที่สวนเค้าปลูกแบบปราศจากสารเคมี ปุ๋ยก็ใช้ปุ๋ยหมัก ไม่ใช้ยาฆ่าแมลงหรือสารเร่งความหวาน ทำให้มั่นใจในความปลอดภัยได้เลย 
-               ช้อปกลับไปฝากได้แบบดีต่อใจ ทั้งคุณภาพและราคา</p>
-             </p>
+                    <span data-lang="th">
+                        <p style="text-indent: 2.5em;">ใครที่กำลังมองหาสถานที่ท่องเที่ยวใกล้กรุงเทพฯ ที่ได้สัมผัสธรรมชาติและชิมผลไม้สดๆ จากสวน ต้องมาที่ "สวนลุงจ้อย" จังหวัดลพบุรี! สวนแห่งนี้มีอินทผาลัมหลากหลายสายพันธุ์ให้เลือกชิม เช่น บาฮี โคไนซี่ และอัมเอ็ดดาฮาน ที่รับรองว่าหวาน กรอบ และอร่อยถูกใจแน่นอน</p>
+                        <p style="text-indent: 2.5em;">อินทผาลัมที่นี่ปลูกแบบปราศจากสารเคมี โดยใช้ปุ๋ยหมักและไม่ใช้ยาฆ่าแมลงหรือสารเร่งความหวาน ทำให้มั่นใจได้ในเรื่องความปลอดภัยและคุณภาพ สามารถซื้อเป็นของฝากได้อย่างสบายใจ</p>
+                    </span>
+                    <span data-lang="en" class="hidden">
+                        <p style="text-indent: 2.5em;">If you're looking for a natural getaway near Bangkok where you can taste fresh fruit straight from the farm, you must visit "Lung Joy's Garden" in Lopburi Province! This garden offers a variety of date palm species to taste, such as Bahy, Khoneizy, and Am-ed-dahan, which are guaranteed to be sweet, crisp, and delicious.</p>
+                        <p style="text-indent: 2.5em;">The date palms here are grown without chemicals, using only compost fertilizer and no pesticides or artificial sweeteners, ensuring both safety and quality. They make for a great and healthy souvenir to take home.</p>
+                    </span>
+                </p>
             </div>
         </div>
     </div>
@@ -409,7 +519,10 @@
     <div id="damnoenSaduakModal" class="modal fixed inset-0 bg-black/70 flex items-center justify-center z-50">
         <div class="bg-white rounded-2xl shadow-lg w-11/12 md:w-2/3 lg:w-1/2 max-h-[90vh] overflow-y-auto">
             <div class="flex justify-between items-center p-4 border-b">
-                <h2 class="text-xl font-bold">บ้านหลบโจร</h2>
+                <h2 class="text-xl font-bold">
+                    <span data-lang="th">บ้านหลบโจร</span>
+                    <span data-lang="en" class="hidden">The "Thief-Hiding" House</span>
+                </h2>
                 <button onclick="closeModal('damnoenSaduakModal')" class="text-gray-500 hover:text-red-500 text-2xl">&times;</button>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 p-4">
@@ -419,10 +532,17 @@
                 <img src="assets/Image5/20250810_121105.jpg" class="rounded-lg object-cover">
             </div>
             <div class="p-4">
-                <h3 class="text-lg font-semibold mb-2">รายละเอียด</h3>
+                <h3 class="text-lg font-semibold mb-2">
+                    <span data-lang="th">รายละเอียด</span>
+                    <span data-lang="en" class="hidden">Details</span>
+                </h3>
                 <p class="text-gray-700 leading-relaxed">
-                    <p style="text-indent: 2.5em;">ไปชมบ้านไทยแบบโบราณ ตั้งอยู่ริมฝั่งคลอง ตัวบ้านหลังใหญ่ งดงาม คลาสสิค ภายในบ้านที่มีช่องสำหรับหลบโจรด้วย ทายาทของบ้านเล่าให้ฟังว่า 
-                        หลุมหลบโจร เคยได้ใช้งานจริง 1ครั้ง ในปี2514 ตอนนั้นโจรเสือปล้นกำลังระบาด แต่โจรไม่ได้อะไรไปเลย เพราะมีหลุมหลบโจรนี่แหละ</p>
+                    <span data-lang="th">
+                        <p style="text-indent: 2.5em;">มาชมบ้านไทยโบราณที่ตั้งอยู่ริมคลอง ตัวบ้านมีขนาดใหญ่ งดงาม และคงความคลาสสิกไว้ ภายในมีช่องลับสำหรับหลบโจร ซึ่งทายาทของบ้านเล่าให้ฟังว่า ช่องหลบโจรนี้เคยถูกใช้งานจริงมาแล้วหนึ่งครั้งในปี พ.ศ. 2514 สมัยนั้นมีกลุ่มโจรเสือปล้นระบาด แต่โจรไม่สามารถขโมยอะไรไปได้เลยเนื่องจากมีช่องหลบโจรนี่เอง</p>
+                    </span>
+                    <span data-lang="en" class="hidden">
+                        <p style="text-indent: 2.5em;">Come and see this beautiful and classic ancient Thai house located by the canal. The house is large and magnificent, with a secret compartment inside for hiding from thieves. According to the descendants of the family, the hiding spot was used once in 1971 when a group of armed thieves was on the loose. The thieves were unable to steal anything, all thanks to this clever hiding spot.</p>
+                    </span>
                 </p>
             </div>
         </div>
@@ -431,7 +551,10 @@
     <div id="sukhothaiModal" class="modal fixed inset-0 bg-black/70 flex items-center justify-center z-50">
         <div class="bg-white rounded-2xl shadow-lg w-11/12 md:w-2/3 lg:w-1/2 max-h-[90vh] overflow-y-auto">
             <div class="flex justify-between items-center p-4 border-b">
-                <h2 class="text-xl font-bold">วัดห้วยแก้ว</h2>
+                <h2 class="text-xl font-bold">
+                    <span data-lang="th">วัดห้วยแก้ว</span>
+                    <span data-lang="en" class="hidden">Wat Huai Kaeo</span>
+                </h2>
                 <button onclick="closeModal('sukhothaiModal')" class="text-gray-500 hover:text-red-500 text-2xl">&times;</button>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 p-4">
@@ -441,12 +564,19 @@
                 <img src="assets/Image6/Baner.jpg" class="rounded-lg object-cover">
             </div>
             <div class="p-4">
-                <h3 class="text-lg font-semibold mb-2">รายละเอียด</h3>
+                <h3 class="text-lg font-semibold mb-2">
+                    <span data-lang="th">รายละเอียด</span>
+                    <span data-lang="en" class="hidden">Details</span>
+                </h3>
                 <p class="text-gray-700 leading-relaxed">
-                      <p style="text-indent: 2.5em;">วัดห้วยแก้ว ตั้งอยู่ที่ ตำบลมหาสอน อำเภอบ้านหมี่ จังหวัดลพบุรี เป็นวัดที่มีการผสมผสานสถาปัตยกรรมขอมทั้งแบบไทย เขมร และเมียนม่าเข้าไว้ด้วยกัน 
-                      โครงสร้างคือเจดีย์ย่อมุมไม้สิบสองแบบสุโขทัย แต่ลวยลายที่อยู่รอบนอกนั้น จะเป็นแบบของขอม มีอายุกว่า 140 ปี ไฮไลท์จะอยู่ที่ เจดีย์กลางน้ำ ที่ประดิษฐานพระพุทธรูปหยกเขียวหยกขาวอยู่ภายในเจดีย์อีกด้วย</p><br>
-                      <p style="text-indent: 2.5em;">บริเวณของ วัดห้วยแก้ว นั้น จะตั้งอยู่บนลำห้วยแก้ว เป็นที่มาของชื่อวัดนั่นเองค่ะ มีสิ่งศักดิ์สิทธิ์ภายในวัดให้กราบไหว้สักการะกันมากมายเลยค่ะ ทั้ง เจดีย์กลางน้ำ องค์พระเจดีย์มหาเมตารัตนะรังษี 
-                      ที่ภายในเจดีย์จะมีการตกแต่งให้เหมือนอยู่กลางป่า พอเข้าไปด้านในจะรู้สึกได้ถึงความสงบ เย็นสบาย นอกจากนี้รอบๆ เจดีย์ยังมีรูปนางอัปสรา (เทพธิดาบนสวรรค์) ที่ก่อด้วยอิฐศิลาแลงในท่าต่างๆ ประดับไว้ทั่วเจดีย์เลยค่ะ</p>
+                    <span data-lang="th">
+                        <p style="text-indent: 2.5em;">วัดห้วยแก้วตั้งอยู่ที่ตำบลมหาสอน อำเภอบ้านหมี่ จังหวัดลพบุรี เป็นวัดที่ผสมผสานสถาปัตยกรรมขอม ไทย และเมียนมาร์เข้าไว้ด้วยกัน โครงสร้างหลักคือเจดีย์ย่อมุมไม้สิบสองแบบสุโขทัย แต่ลวดลายรอบนอกเป็นแบบขอม มีอายุกว่า 140 ปี จุดเด่นคือเจดีย์กลางน้ำที่มีพระพุทธรูปหยกเขียวและหยกขาวประดิษฐานอยู่ภายใน</p><br>
+                        <p style="text-indent: 2.5em;">บริเวณวัดตั้งอยู่บนลำห้วยแก้วซึ่งเป็นที่มาของชื่อวัด ภายในมีสิ่งศักดิ์สิทธิ์ให้กราบไหว้มากมาย เช่น เจดีย์กลางน้ำ และองค์พระเจดีย์มหาเมตตารัตนะรังษี ซึ่งภายในตกแต่งให้เหมือนอยู่ในป่า ทำให้รู้สึกสงบและเย็นสบาย นอกจากนี้รอบๆ เจดีย์ยังมีรูปนางอัปสราที่ก่อด้วยอิฐศิลาแลงในท่าทางต่างๆ ประดับไว้ทั่วเจดีย์</p>
+                    </span>
+                    <span data-lang="en" class="hidden">
+                        <p style="text-indent: 2.5em;">Wat Huai Kaeo is located in Mahasorn Sub-district, Ban Mi District, Lopburi Province. The temple blends Khmer, Thai, and Myanmar architectural styles. Its main structure is a twelve-sided chedi in the Sukhothai style, but the exterior carvings are in the Khmer style. The temple is over 140 years old. A highlight is the chedi in the middle of the water, which houses green and white jade Buddha images inside.</p><br>
+                        <p style="text-indent: 2.5em;">The temple grounds are situated on the Huai Kaeo canal, which is the origin of its name. There are many sacred objects to worship, such as the chedi in the water and the Phra Chedi Maha Metta Rattana Rangsi. The interior of the main chedi is decorated to resemble a forest, creating a sense of peace and coolness. Around the chedi, there are also various sculptures of Apsara deities made of laterite.</p>
+                    </span>
                 </p>
             </div>
         </div>
@@ -455,7 +585,10 @@
     <div id="pattayaBeachModal" class="modal fixed inset-0 bg-black/70 flex items-center justify-center z-50">
         <div class="bg-white rounded-2xl shadow-lg w-11/12 md:w-2/3 lg:w-1/2 max-h-[90vh] overflow-y-auto">
             <div class="flex justify-between items-center p-4 border-b">
-                <h2 class="text-xl font-bold">ลุ่มแม่น้ำบางขาม บ้านบางพึ่ง</h2>
+                <h2 class="text-xl font-bold">
+                    <span data-lang="th">ลุ่มแม่น้ำบางขาม บ้านบางพึ่ง</span>
+                    <span data-lang="en" class="hidden">Bang Kham River Basin, Ban Bang Phueng</span>
+                </h2>
                 <button onclick="closeModal('pattayaBeachModal')" class="text-gray-500 hover:text-red-500 text-2xl">&times;</button>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 p-4">
@@ -465,14 +598,21 @@
                 <img src="assets/Image7/image3.png" class="rounded-lg object-cover">
             </div>
             <div class="p-4">
-                <h3 class="text-lg font-semibold mb-2">รายละเอียด</h3>
+                <h3 class="text-lg font-semibold mb-2">
+                    <span data-lang="th">รายละเอียด</span>
+                    <span data-lang="en" class="hidden">Details</span>
+                </h3>
                 <p class="text-gray-700 leading-relaxed">
-                     <p style="text-indent: 2.5em;">ตั้งอยู่หมู่ 1 ต.บางพึ่ง อำเภอบ้านหมี่ จ.ลพบุรี เป็นทางสัญจรเสมือนสายโลหิตสำคัญของชาวบางพึ่ง มีลำคลองสาขาต่างๆ 
-                     ไหลลัดเลาะไปตามท้องทุ่งทำให้ชาวบ้านหมี่อุดมสมบูรณ์ สามารถจับปลาเล็ก ๆ พวกปลาสร้อย ปลาซ่า ปลาตะเพียน ในอดีตจับปลาริมน้ำกลายเป็นประมงพื้นบ้านที่ทำเป็นอาชีพ</p>
-                     <p style="text-indent: 2.5em;">วัดคุ้งทาเลา มีสัญลักษณ์สะดุดตา ด้วยสถาปัตยกรรมปูนทั้งสองด้านเป็นตัวหนุมานอ้าปาก เด่นสง่าประดับกระจกสีสวยสะดุดตา 
-                     ภายในพระอุโบสถเป็นภาพจิตกรรมฝาผนัง เป็นเรื่องเทศน์มหาชาติ และพระมาลัยในตำนาน</p>
-                     <p style="text-indent: 2.5em;">ด้านหลังวัดติดแม่น้ำบางขาม สองฝั่งคลองร่มรื่นต้นไม้ มองเห็นสวนไร่และบ้านไทยโบราณทรงมนิลา ที่เรียกกันว่าบ้านขนมปังขิง ซึ่งส่วนใหญ่เป็นคหบดีที่ร่ำรวยจากที่นา 
-                     และขายข้าวสาร นิยมสร้างกันมากช่วงปลาย ร. 6 ถึง ร. 8 โดยพัฒนามาจากเรือนปั้นหยา พัฒนาดัดแปลงมาจากทางตะวันตก มีเอกลักษณ์โดดเด่นด้วยการตกแต่งไม้แกะฉลุ หรือที่ชาวบ้านเรียกว่า ลายโปร่ง เพื่อให้ลมพัดผ่านได้</p>
+                    <span data-lang="th">
+                        <p style="text-indent: 2.5em;">ตั้งอยู่หมู่ที่ 1 ตำบลบางพึ่ง อำเภอบ้านหมี่ จังหวัดลพบุรี เป็นเส้นทางสัญจรที่สำคัญเสมือนเป็นสายเลือดหล่อเลี้ยงชีวิตของชาวบางพึ่ง มีลำคลองสาขาไหลลัดเลาะไปตามท้องทุ่ง ทำให้ชาวบ้านมีวิถีชีวิตที่อุดมสมบูรณ์ ในอดีตการจับปลาตัวเล็กๆ เช่น ปลาสร้อย ปลาซ่า หรือปลาตะเพียนริมน้ำได้กลายเป็นอาชีพประมงพื้นบ้าน</p>
+                        <p style="text-indent: 2.5em;">ในบริเวณนี้ยังมีวัดคุ้งทาเลา ซึ่งมีจุดเด่นอยู่ที่สถาปัตยกรรมปูนปั้นรูปหนุมานอ้าปากทั้งสองด้านของพระอุโบสถ ประดับด้วยกระจกสีที่สวยงาม ภายในพระอุโบสถมีจิตรกรรมฝาผนังเล่าเรื่องมหาชาติและตำนานพระมาลัย</p>
+                        <p style="text-indent: 2.5em;">ด้านหลังวัดติดกับแม่น้ำบางขาม สองฝั่งคลองร่มรื่นไปด้วยต้นไม้ มองเห็นไร่สวนและบ้านไทยโบราณทรงมนิลาที่เรียกว่า "บ้านขนมปังขิง" ซึ่งเป็นที่นิยมสร้างกันในสมัยปลายรัชกาลที่ 6 ถึงรัชกาลที่ 8 โดยพัฒนามาจากเรือนปั้นหยา มีเอกลักษณ์โดดเด่นด้วยการตกแต่งไม้แกะฉลุ หรือที่ชาวบ้านเรียกว่า "ลายโปร่ง" เพื่อให้อากาศถ่ายเทได้สะดวก</p>
+                    </span>
+                    <span data-lang="en" class="hidden">
+                        <p style="text-indent: 2.5em;">Located at Moo 1, Ban Phueng Sub-district, Ban Mi District, Lopburi Province, this river basin is a vital route and the lifeblood of the Bang Phueng community. Its many canals wind through the fields, creating a rich and abundant lifestyle for the locals. In the past, catching small fish like silver barbs, Siamese mud carps, or common carp along the riverbank was a common livelihood.</p>
+                        <p style="text-indent: 2.5em;">Also in the area is Wat Khung Tha Lao, notable for the stucco Hanuman figures with open mouths on both sides of the ubosot, decorated with beautiful colored glass. Inside the ubosot, there are murals depicting the Vessantara Jataka and the legend of Phra Malai.</p>
+                        <p style="text-indent: 2.5em;">Behind the temple, next to the Bang Kham River, the banks are shaded by trees. You can see fields and ancient Manila-style Thai houses, often called "gingerbread houses." These houses were popular during the late reigns of King Rama VI to King Rama VIII, evolving from the hip-roofed house style. Their distinctive feature is the decorative open-carved woodwork, which the locals call "porng lai," designed to allow air to circulate freely.</p>
+                    </span>
                 </p>
             </div>
         </div>
@@ -481,7 +621,10 @@
     <div id="phanomRungModal" class="modal fixed inset-0 bg-black/70 flex items-center justify-center z-50">
         <div class="bg-white rounded-2xl shadow-lg w-11/12 md:w-2/3 lg:w-1/2 max-h-[90vh] overflow-y-auto">
             <div class="flex justify-between items-center p-4 border-b">
-                <h2 class="text-xl font-bold">บ้านสวนขวัญ</h2>
+                <h2 class="text-xl font-bold">
+                    <span data-lang="th">บ้านสวนขวัญ</span>
+                    <span data-lang="en" class="hidden">Baan Suan Khwan</span>
+                </h2>
                 <button onclick="closeModal('phanomRungModal')" class="text-gray-500 hover:text-red-500 text-2xl">&times;</button>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 p-4">
@@ -491,9 +634,17 @@
                 <img src="assets/Image8/image2.png" class="rounded-lg object-cover">
             </div>
             <div class="p-4">
-                <h3 class="text-lg font-semibold mb-2">รายละเอียด</h3>
+                <h3 class="text-lg font-semibold mb-2">
+                    <span data-lang="th">รายละเอียด</span>
+                    <span data-lang="en" class="hidden">Details</span>
+                </h3>
                 <p class="text-gray-700 leading-relaxed">
-                    	<p style="text-indent: 2.5em;">บ้านสวนขวัญเป็นแหล่งท่องเที่ยวนววิถี เกษตรชุมชน ติดแม่น้ำบางขาม จัดกิจกรรมหลากหลาย ฝึกอาชีพ เรียนรู้เชิงเกษตร ท่องเที่ยวชุมชน โฮมสเตย์ จัดอบรม</p>
+                    <span data-lang="th">
+                        <p style="text-indent: 2.5em;">บ้านสวนขวัญเป็นแหล่งท่องเที่ยวแบบนววิถีเชิงเกษตรชุมชน ตั้งอยู่ริมแม่น้ำบางขาม มีกิจกรรมหลากหลาย เช่น การฝึกอาชีพ เรียนรู้ด้านการเกษตร และมีบริการที่พักแบบโฮมสเตย์ พร้อมจัดกิจกรรมอบรมต่างๆ ให้แก่ผู้สนใจ</p>
+                    </span>
+                    <span data-lang="en" class="hidden">
+                        <p style="text-indent: 2.5em;">Baan Suan Khwan is a modern agricultural community tourism site located along the Bang Kham River. It offers a variety of activities, including professional training, agricultural learning, and homestay accommodations, as well as various workshops for interested visitors.</p>
+                    </span>
                 </p>
             </div>
         </div>
@@ -502,7 +653,10 @@
     <div id="monBridgeModal" class="modal fixed inset-0 bg-black/70 flex items-center justify-center z-50">
         <div class="bg-white rounded-2xl shadow-lg w-11/12 md:w-2/3 lg:w-1/2 max-h-[90vh] overflow-y-auto">
             <div class="flex justify-between items-center p-4 border-b">
-                <h2 class="text-xl font-bold">โรงสีไทยสมบูรณ์พัฒนา</h2>
+                <h2 class="text-xl font-bold">
+                    <span data-lang="th">โรงสีไทยสมบูรณ์พัฒนา</span>
+                    <span data-lang="en" class="hidden">Thai Somboon Phatthana Rice Mill</span>
+                </h2>
                 <button onclick="closeModal('monBridgeModal')" class="text-gray-500 hover:text-red-500 text-2xl">&times;</button>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 p-4">
@@ -511,26 +665,33 @@
              
             </div>
             <div class="p-4">
-                <h3 class="text-lg font-semibold mb-2">รายละเอียด</h3>
+                <h3 class="text-lg font-semibold mb-2">
+                    <span data-lang="th">รายละเอียด</span>
+                    <span data-lang="en" class="hidden">Details</span>
+                </h3>
                 <p class="text-gray-700 leading-relaxed">
-                    เป็นแหล่งสถานที่ ที่ร่วมรวมของโบราณ และของเก่าๆ ที่ผ่านมานานหลายปีไว้เป็นสถานที่ท่องเที่ยงอีก 1 ที่ควรจะมาชม
+                    <span data-lang="th">
+                        เป็นแหล่งรวบรวมของเก่าและของโบราณที่หาชมได้ยาก เป็นอีกหนึ่งสถานที่ท่องเที่ยวที่ควรมาเยี่ยมชม
+                    </span>
+                    <span data-lang="en" class="hidden">
+                        A collection of rare ancient and vintage items, this is a must-visit tourist attraction.
+                    </span>
                 </p>
             </div>
         </div>
     </div>
-    <!-- ป้ายลอยมุมขวาล่าง -->
-  <div class="floating-badge" id="fbFloatingBadge" aria-live="polite">
+    <div class="floating-badge" id="fbFloatingBadge" aria-live="polite">
     <a
       href="https://www.facebook.com/profile.php?id=100063675975899&rdid=FZqGNPgOrvgVZhFR&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1LsGyfkioP%2F#"
       target="_blank"
       rel="noopener noreferrer"
       aria-label="ไปยังเพจ Facebook"
     >
-      <!-- ไอคอน Facebook (SVG) -->
       <svg class="fb-icon" viewBox="0 0 24 24" aria-hidden="true">
         <path fill="#1877F2" d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.093 10.125 24v-8.437H7.078v-3.49h3.047V9.413c0-3.017 1.792-4.687 4.533-4.687 1.312 0 2.686.235 2.686.235v2.953h-1.514c-1.492 0-1.955.928-1.955 1.88v2.249h3.328l-.532 3.49H13.875V24C19.612 23.093 24 18.1 24 12.073z"/>
       </svg>
-      <span>ถ้าจะมาเที่ยวบ้านมหาสอนต้องทำการติดต่อจองล่วงหน้าได้ที่เพจเฟสบุ๊ค [คลิก] </span>
+      <span data-lang="th">ถ้าจะมาเที่ยวบ้านมหาสอนต้องทำการติดต่อจองล่วงหน้าได้ที่เพจเฟสบุ๊ค [คลิก] </span>
+      <span data-lang="en" class="hidden">To visit Ban Mahasorn, please contact and book in advance on our Facebook page [Click]</span>
     </a>
     <button class="close-btn" aria-label="ปิดการแจ้งเตือน" title="ปิด">×</button>
   </div>
@@ -538,8 +699,14 @@
 
     <footer class="bg-gray-900 text-white py-12">
         <div class="container mx-auto px-4 text-center">
-            <h3 class="text-2xl font-bold mb-4">การท่องเที่ยวล่องแพและศิลปะวัฒนธรรมวิถีชุมชนบ้านมหาสอน</h3>
-            <p class="text-gray-400 mb-6">ค้นพบความงามของจังหวัดลพบุรีในทุกมุมมอง</p>
+            <h3 class="text-2xl font-bold mb-4">
+                <span data-lang="th">การท่องเที่ยวล่องแพและศิลปะวัฒนธรรมวิถีชุมชนบ้านมหาสอน</span>
+                <span data-lang="en" class="hidden">Mahasorn Village Community-Based Ecotourism and Cultural Arts</span>
+            </h3>
+            <p class="text-gray-400 mb-6">
+                <span data-lang="th">ค้นพบความงามของจังหวัดลพบุรีในทุกมุมมอง</span>
+                <span data-lang="en" class="hidden">Discover the beauty of Lopburi province from every perspective.</span>
+            </p>
             <div class="flex justify-center gap-6 text-sm text-gray-400">
             
             </div>
@@ -568,15 +735,59 @@
     </script>
 
     <script>
-  // ปุ่มปิดป้ายลอย
-  document.querySelector('.floating-badge .close-btn')
-    .addEventListener('click', function () {
-      const badge = document.getElementById('fbFloatingBadge');
-      badge.style.transition = 'opacity .2s ease, transform .2s ease';
-      badge.style.opacity = '0';
-      badge.style.transform = 'translateY(8px)';
-      setTimeout(() => badge.remove(), 200);
-    });
-</script>
+        // ปุ่มปิดป้ายลอย
+        document.querySelector('.floating-badge .close-btn')
+            .addEventListener('click', function () {
+            const badge = document.getElementById('fbFloatingBadge');
+            badge.style.transition = 'opacity .2s ease, transform .2s ease';
+            badge.style.opacity = '0';
+            badge.style.transform = 'translateY(8px)';
+            setTimeout(() => badge.remove(), 200);
+        });
+    </script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const langThBtn = document.getElementById('lang-th-btn');
+            const langEnBtn = document.getElementById('lang-en-btn');
+            const langElements = document.querySelectorAll('[data-lang]');
+
+            function setLanguage(lang) {
+                // Toggle active button styles
+                if (lang === 'th') {
+                    langThBtn.classList.add('bg-blue-600', 'text-white');
+                    langThBtn.classList.remove('bg-gray-200', 'text-gray-700');
+                    langEnBtn.classList.remove('bg-blue-600', 'text-white');
+                    langEnBtn.classList.add('bg-gray-200', 'text-gray-700');
+                } else {
+                    langEnBtn.classList.add('bg-blue-600', 'text-white');
+                    langEnBtn.classList.remove('bg-gray-200', 'text-gray-700');
+                    langThBtn.classList.remove('bg-blue-600', 'text-white');
+                    langThBtn.classList.add('bg-gray-200', 'text-gray-700');
+                }
+
+                // Show/hide content based on language
+                langElements.forEach(el => {
+                    if (el.getAttribute('data-lang') === lang) {
+                        el.classList.remove('hidden');
+                    } else {
+                        el.classList.add('hidden');
+                    }
+                });
+            }
+
+            // Set default language to Thai on page load
+            setLanguage('th');
+
+            // Add event listeners to the buttons
+            langThBtn.addEventListener('click', () => {
+                setLanguage('th');
+            });
+
+            langEnBtn.addEventListener('click', () => {
+                setLanguage('en');
+            });
+        });
+    </script>
 </body>
 </html>
