@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>การท่องเที่ยวล่องแพและศิลปะวัฒนธรรมวิถีชุมชนบ้านมหาสอน</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <style>
+        /* Optional: Add a smooth fade-in effect for the modal */
+        .modal {
+            transition: opacity 0.3s ease-in-out;
+            opacity: 0;
+            pointer-events: none;
+            display: none; /* Hide by default */
+        }
+        .modal.is-open {
+            opacity: 1;
+            pointer-events: auto;
+            display: flex; /* Show when open */
+        }
+    </style>
+
+<title>Floating Facebook Badge</title>
+<style>
+  .floating-badge {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 9999;
+    background: #1f2937;   /* 👈 สีพื้นหลังเข้ม (เทาเข้ม) */
+    border-radius: 16px;   /* 👈 ทำเป็นกล่องโค้งมน */
+    box-shadow: 0 8px 24px rgba(0,0,0,.25);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 20px;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    font-size: 18px;
+  }
+
+  .floating-badge a {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #ffffff;   /* 👈 ตัวอักษรสีขาว */
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  .floating-badge a:hover {
+    color: #93c5fd;   /* 👈 hover แล้วเปลี่ยนเป็นฟ้าอ่อน */
+  }
+
+  .floating-badge .fb-icon {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+  }
+
+  .floating-badge .close-btn {
+    border: none;
+    background: transparent;
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+    color: #d1d5db;   /* ปุ่มปิดสีเทาอ่อน */
+    padding: 8px;
+    border-radius: 999px;
+  }
+
+  .floating-badge .close-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+  }
+</style>
+
+</head>
+<body class="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50">
+
+    <header class="bg-white/80 backdrop-blur-md shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-6 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 via-green-600 to-orange-500 bg-clip-text text-transparent">
+                การท่องเที่ยวล่องแพและศิลปะวัฒนธรรมวิถีชุมชน <br>บ้านมหาสอน
+            </h1>
+            <p class="text-gray-600 mt-2 text-lg">
+                ค้นพบความงามและเสน่ห์ของ ชุมชนเชิงเกษตร ในมุมมองใหม่
+            </p>
+        </div>
+    </header>
+
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl font-bold text-center mb-8">3Dโมเดลสินค้าตะกล้าสานบ้านมหาสอน</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-gray-50 rounded-xl shadow-md p-4">
+                    <model-viewer 
+                        src="https://raw.githubusercontent.com/66122640115-debug/thai-3d-models/main/busket1.glb" 
+                        alt="โมเดล 1" 
+                        camera-controls 
+                        auto-rotate 
+                        shadow-intensity="1" 
+                        ar 
+                        style="width:100%; height:300px;">
+                    </model-viewer>
+                    <h3 class="text-lg font-semibold mt-3 text-center">โมเดล 1</h3>
+                </div>
+                <div class="bg-gray-50 rounded-xl shadow-md p-4">
+                    <model-viewer 
+                        src="https://raw.githubusercontent.com/66122640115-debug/thai-3d-models/main/busket2.glb" 
+                        alt="โมเดล 2" 
+                        camera-controls 
+                        auto-rotate 
+                        shadow-intensity="1" 
+                        ar 
+                        style="width:100%; height:300px;">
+                    </model-viewer>
+                    <h3 class="text-lg font-semibold mt-3 text-center">โมเดล 2</h3>
+                </div>
+                <div class="bg-gray-50 rounded-xl shadow-md p-4">
+                    <model-viewer 
+                        src="https://raw.githubusercontent.com/66122640115-debug/thai-3d-models/main/busket3.glb" 
+                        alt="โมเดล 3" 
+                        camera-controls 
+                        auto-rotate 
+                        shadow-intensity="1" 
+                        ar 
+                        style="width:100%; height:300px;">
+                    </model-viewer>
+                    <h3 class="text-lg font-semibold mt-3 text-center">โมเดล 3</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="relative h-[500px] md:h-[650px] flex items-center justify-center overflow-hidden">
+        <img src="assets/banner.png" alt="Thai Travel Banner" class="absolute inset-0 w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-r from-black/50 to-black/20"></div>
+    </section>
+
+    <section class="py-16">
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 cursor-pointer" onclick="openModal('phiPhiModal')">
+                <div class="relative">
+                    <img src="assets/Image1/image1.png" alt="เกาะพีพี" class="w-full h-64 object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 text-white">
+                        <h3 class="text-2xl font-bold">วัดมหาสอน</h3>
+                        
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        
+                        
+                    </div>
+                    <p class="text-gray-600 mb-4">วัดมหาสอน ตั้งอยู่เลขที่ 47 บ้านมหาสอน หมู่ที่ 5 ตำบลมหาสอน อำเภอบ้านหมี่ จังหวัดลพบุรี  สังกัดคณะสงฆ์มหานิกาย 
+มีที่ดินตั้งวัด เนื้อที่ 26 ไร่ 2 งาน 22 ตารางวา...</p>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 cursor-pointer" onclick="openModal('doiInthanonModal')">
+                <div class="relative">
+                    <img src="assets/Image2/a94972_03862d4fa46c4e478c230fc1e28f154e~mv2.avif" alt="ดอยอินทนนท์" class="w-full h-64 object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 text-white">
+                        <h3 class="text-2xl font-bold">เครื่องจักสานหวายบ้านที่วิสาหกิจจักรสานหวายบ้านมหาสอน</h3>
+                        
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        
+                    </div>
+                    <p class="text-gray-600 mb-4">งานจักสานช่างฝีมือพื้นบ้านของบ้านขอม ตำบลมหาสอน อำเภอบ้านหมี่ จังหวัดลพบุรี มีเอกลักษณ์ เกิดจากการผสมผสานภูมิปัญญาชาวบ้าน หรือภูมิปัญญาพื้นบ้าน ที่นำวัตถุดิบใน ท้องถิ่นมาประดิษฐ์ มุ่งเน้นความละเอียดอ่อน ปราณีต ในงานฝีมือเป็นเอกลักษณ์เฉพาะถิ่น...</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 cursor-pointer" onclick="openModal('watRongKhunModal')">
+                <div class="relative">
+                    <img src="assets/Image3/image.png" alt="วัดร่องขุ่น" class="w-full h-64 object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 text-white">
+                        <h3 class="text-2xl font-bold">งานศิลปะจากใบไม้ลงผืนผ้า </h3>
+                        
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        
+                    </div>
+                    <p class="text-gray-600 mb-4">ผ้าพิมพ์ลายใบไม้คือ…
+คือการถ่ายสีและลวดลายจากใบไม้ ดอกไม้ ลงบนผืนผ้า ผ่านกระบวนการง่ายๆ ด้วยวิธีธรรมชาติ...</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 cursor-pointer" onclick="openModal('ratchapraphaDamModal')">
+                <div class="relative">
+                    <img src="assets/Image4/0bdcf9d0-780b-11f0-bc52-5749fece1bbc_webp_original.avif" alt="เขื่อนรัชชประภา" class="w-full h-64 object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 text-white">
+                        <h3 class="text-2xl font-bold">สวนอินทผาลัมชมชิม</h3>
+                        
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-4">
+                       
+                    </div>
+                    <p class="text-gray-600 mb-4">สวนลุงจ้อยเป็นสวนอินทผาลัมขนาดใหญ่ ที่นี่มีอินทผาลัมหลากหลายสายพันธุ์ให้เลือกชิมกันแบบสดๆ ทั้งบาฮี โคไนซี่ อัมเอ็ดดาฮาน  บอกเลยว่า หวาน กรอบ อร่อย ชื่นใจสุดๆ...</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 cursor-pointer" onclick="openModal('damnoenSaduakModal')">
+                <div class="relative">
+                    <img src="assets/Image5/Baner.jpg" alt="ตลาดน้ำดำเนินสะดวก" class="w-full h-64 object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 text-white">
+                        <h3 class="text-2xl font-bold">บ้านหลบโจร</h3>
+                        
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        
+                    </div>
+                    <p class="text-gray-600 mb-4">ไปชมบ้านไทยแบบโบราณ ตั้งอยู่ริมฝั่งคลอง ตัวบ้านหลังใหญ่ งดงาม คลาสสิค ภายในบ้านที่มีช่องสำหรับหลบโจรด้วย ทายาทของบ้านเล่าให้ฟังว่า 
+                        หลุมหลบโจร เคยได้ใช้งานจริง 1ครั้ง ในปี2514...</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 cursor-pointer" onclick="openModal('sukhothaiModal')">
+                <div class="relative">
+                    <img src="assets/Image6/bbb.jpg" alt="อุทยานประวัติศาสตร์สุโขทัย" class="w-full h-64 object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 text-white">
+                        <h3 class="text-2xl font-bold">วัดห้วยแก้ว</h3>
+                       
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-4">
+                       
+                    </div>
+                    <p class="text-gray-600 mb-4">วัดห้วยแก้ว ตั้งอยู่ที่ ตำบลมหาสอน อำเภอบ้านหมี่ จังหวัดลพบุรี เป็นวัดที่มีการผสมผสานสถาปัตยกรรมขอมทั้งแบบไทย 
+                        เขมร และเมียนม่าเข้าไว้ด้วยกัน โครงสร้างคือเจดีย์ย่อมุมไม้สิบสองแบบสุโขทัย แต่ลวยลายที่อยู่รอบนอกนั้น จะเป็นแบบของขอม มีอายุกว่า 140 ปี...</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 cursor-pointer" onclick="openModal('pattayaBeachModal')">
+                <div class="relative">
+                    <img src="assets/Image7/image4.png" alt="หาดพัทยา" class="w-full h-64 object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 text-white">
+                        <h3 class="text-2xl font-bold">ลุ่มแม่น้ำบางขาม บ้านบางพึ่ง</h3>
+                        
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        
+                    </div>
+                    <p class="text-gray-600 mb-4">ตั้งอยู่หมู่ 1 ต.บางพึ่ง อำเภอบ้านหมี่ จ.ลพบุรี เป็นทางสัญจรเสมือนสายโลหิตสำคัญของชาวบางพึ่ง 
+                        มีลำคลองสาขาต่างๆ ไหลลัดเลาะไปตามท้องทุ่งทำให้ชาวบ้านหมี่อุดมสมบูรณ์...</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 cursor-pointer" onclick="openModal('phanomRungModal')">
+                <div class="relative">
+                    <img src="assets/Image8/bavb.jpg" alt="ปราสาทหินพนมรุ้ง" class="w-full h-64 object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 text-white">
+                        <h3 class="text-2xl font-bold">บ้านสวนขวัญ</h3>
+                        
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-4">
+                       
+                    </div>
+                    <p class="text-gray-600 mb-4">บ้านสวนขวัญเป็นแหล่งท่องเที่ยวนววิถี เกษตรชุมชน ติดแม่น้ำบางขาม จัดกิจกรรมหลากหลาย ฝึกอาชีพ...</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 cursor-pointer" onclick="openModal('monBridgeModal')">
+                <div class="relative">
+                    <img src="assets/Image9/bar.png" alt="สะพานมอญ" class="w-full h-64 object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 text-white">
+                        <h3 class="text-2xl font-bold">โรงสีไทยสมบูรณ์พัฒนา</h3>
+                        
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-4">
+                      
+                    </div>
+                    <p class="text-gray-600 mb-4">ส่วนมากเป็นสถานที่ที่มีของเก่าๆ สมัยนานมากๆ...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="phiPhiModal" class="modal fixed inset-0 bg-black/70 flex items-center justify-center z-50">
+        <div class="bg-white rounded-2xl shadow-lg w-11/12 md:w-2/3 lg:w-1/2 max-h-[90vh] overflow-y-auto">
+            <div class="flex justify-between items-center p-4 border-b">
+                <h2 class="text-xl font-bold">วัดมหาสอน</h2>
+                <button onclick="closeModal('phiPhiModal')" class="text-gray-500 hover:text-red-500 text-2xl">&times;</button>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 p-4">
+                <img src="assets/Image1/20250810_105317.jpg" class="rounded-lg object-cover">
+                <img src="assets/Image1/20250810_110124.jpg" class="rounded-lg object-cover">
+                <img src="assets/Image1/20250810_105517.jpg" class="rounded-lg object-cover">
+                <img src="assets/Image1/20250810_105609.jpg" class="rounded-lg object-cover">
+            </div>
+            <div class="p-4">
+                <h3 class="text-lg font-semibold mb-2">รายละเอียด</h3>
+                <p class="text-gray-700 leading-relaxed"><p style="text-indent: 2.5em;">วัดมหาสอน ตั้งอยู่เลขที่ 47 บ้านมหาสอน หมู่ที่ 5 ตำบลมหาสอน อำเภอบ้านหมี่ จังหวัดลพบุรี  สังกัดคณะสงฆ์มหานิกาย 
+มีที่ดินตั้งวัด เนื้อที่ 26 ไร่ 2 งาน 22 ตารางวา  พื้นที่ตั้งวัดเป็นที่ราบลุ่ม ริมแม่น้ำบางขาม สมัยก่อนวัดถูกน้ำท่วมเป็นประจำ 
+
+อาคารเสนาสนะต่างๆ มีอุโบสถ กว้าง 4 เมตร ยาว  เมตร สร้างเมื่อปี 2511  ศาลาการเปรียญ กว้าง 11.5 เมตร ยาว 23.5 เมตร สร้างเมื่อปี 2493 เป็นอาคารไม้ มีหอสวดมนต์เก่าที่สร้างในปี 2485 มีกุฎิสงฆ์ 3 หลัง สำหรับปูชนียวัตถุ มีประประธานในอุโบสถ ขนาดพระเพลา กว้าง3ศอก 1 คืนเศษ
+</p>
+​
+
+<br><p style="text-indent: 2.5em;">วัดมหาสอนสร้างขึ้นเป็นวัดนับตั้งแต่ พ.ศ. 2408 ชาวบ้านในตำบลร่วมกันสร้าง  โดยมีหลวงพ่อเดช มาอยู่ปกครองวัด
+เป็นรูปแรก  ได้ดำเนินการก่อสร้างเสนาสนะสืบมา  ต่อมาได้รับพระราชทานวิสุงคามสีมา เมื่อวันที่ 4 พฤศจิกายน 2509
+เขตวิสุงคามสีมากว้าง 26 เมตร ยาว36 เมตร มีภิกษุจำพรรษา 13 รูป</p>
+                
+            </div>
+        </div>
+    </div>
+
+    <div id="doiInthanonModal" class="modal fixed inset-0 bg-black/70 flex items-center justify-center z-50">
+        <div class="bg-white rounded-2xl shadow-lg w-11/12 md:w-2/3 lg:w-1/2 max-h-[90vh] overflow-y-auto">
+            <div class="flex justify-between items-center p-4 border-b">
+                <h2 class="text-xl font-bold">เครื่องจักสานหวายบ้านที่วิสาหกิจจักรสานหวายบ้านมหาสอน</h2>
+                <button onclick="closeModal('doiInthanonModal')" class="text-gray-500 hover:text-red-500 text-2xl">&times;</button>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 p-4">
+                <img src="assets/Image2/20250810_111435.jpg" class="rounded-lg object-cover">
+                <img src="assets/Image2/20250810_111441.jpg" class="rounded-lg object-cover">
+                <img src="assets/Image2/20250810_111456.jpg" class="rounded-lg object-cover">
+                <img src="assets/Image2/20250810_112216.jpg" class="rounded-lg object-cover">
+            </div>
+            <div class="p-4">
+                <h3 class="text-lg font-semibold mb-2">รายละเอียด</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    <p style="text-indent: 2.5em;">เครื่องจักสาน เป็นการงานช่างฝีมือพื้นบ้านของชาวบ้านตำบลมหาสอน อำเภอบ้านหมี่ จังหวัดลพบุรี เกิดขึ้นประมาณ ปี พ.ศ. 2495 โดย คือคุณป้าโถม ศรีวิฑรูย์ 
+                    เป็นผู้ถ่ายทอดให้แก่ นางชะลอ ทนทองคำ เมื่อนางชลอ ทนทองคำ ได้รับการถ่ายทอดตั้งแต่สมัยเด็ก ก็ได้ฝึกการทำตะกร้าหวายจนมีความชำนาญ จึงได้ถ่ายทอดต่อให้กับลูก หลาน 
+                    และผู้สนใจในหมู่บ้าน ต่อมาจึงร่วมกันคิดจัดตั้งกลุ่มสหกรณ์ขึ้น ชื่อกลุ่มจักสานตะกร้าหวายลายวิจิตร ตั้งอยู่ ณ บ้านเลขที่ 15 หมู่ที่ 6 ตำบลมหาสอน อำเภอบ้านหมี่ จังหวัดลพบุรี และนางชะลอ ทนทองคำ 
+                    เป็นประธานกลุ่ม ผลิตผลงานเป็นที่รู้จักของคนทั่วไปจนได้รับคัดสรรให้เป็นสุดยอดหนึ่งตำบล หนึ่งผลิตภัณฑ์ไทย ระดับ 4 ดาว OTOP เมื่อปี พ.ศ ๒๕๔๖ และได้รับ ระดับ 5 ดาว เมื่อปี พ.ศ. 2549
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="watRongKhunModal" class="modal fixed inset-0 bg-black/70 flex items-center justify-center z-50">
+        <div class="bg-white rounded-2xl shadow-lg w-11/12 md:w-2/3 lg:w-1/2 max-h-[90vh] overflow-y-auto">
+            <div class="flex justify-between items-center p-4 border-b">
+                <h2 class="text-xl font-bold">งานศิลปะจากใบไม้ลงผืนผ้า</h2>
+                <button onclick="closeModal('watRongKhunModal')" class="text-gray-500 hover:text-red-500 text-2xl">&times;</button>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 p-4">
+                <img src="assets/Image3/image.png" class="rounded-lg object-cover">
+                <img src="assets/Image3/20250810_112733.jpg" class="rounded-lg object-cover">
+                <img src="assets/Image3/20250810_112759.jpg" class="rounded-lg object-cover">
+                <img src="assets/Image3/20250810_113024.jpg" class="rounded-lg object-cover">
+            </div>
+            <div class="p-4">
+                <h3 class="text-lg font-semibold mb-2">รายละเอียด</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    <p style="text-indent: 2.5em;">จากใบไม้ธรรมดา ผ่านกระบวนการง่ายๆ ด้วยสิ่งง่ายๆ กลับกลายเป็นความสวยสดงดงามอย่างคาดไม่ถึง ลวดลาย สีสันของใบไม้ที่แสดงอยู่บนผืนผ้า แสดงถึงความละเอียด อ่อนช้อย 
+                    ที่ธรรมชาติสร้างสรรค์ได้ปรากฏขึ้นให้เราได้ประจักษ์ เป็นสิ่งซึ่งไม่อาจอธิบายได้ด้วยคำพูด รูปและสีธรรมชาติ เหล่านี้ให้ความอิ่มเอม ให้ความสุขที่บรรยายได้ยาก เราอาจจะเรียกความสุขแบบนี้ว่าเป็นความสุขภายนอก 
+                    แต่ขณะที่ทำมันมีความสุขอีกอย่างหนึ่งที่เกิดขึ้นควบคู่กันด้วยคือความงดงามของจิตขณะที่เราได้ทำ
+</p>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="ratchapraphaDamModal" class="modal fixed inset-0 bg-black/70 flex items-center justify-center z-50">
+        <div class="bg-white rounded-2xl shadow-lg w-11/12 md:w-2/3 lg:w-1/2 max-h-[90vh] overflow-y-auto">
+            <div class="flex justify-between items-center p-4 border-b">
+                <h2 class="text-xl font-bold">สวนอินทผาลัมชมชิม</h2>
+                <button onclick="closeModal('ratchapraphaDamModal')" class="text-gray-500 hover:text-red-500 text-2xl">&times;</button>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 p-4">
+                <img src="assets/Image4/0daefab0-780b-11f0-bc52-5749fece1bbc_webp_original.webp" class="rounded-lg object-cover">
+                <img src="assets/Image4/101b66d0-780b-11f0-bc52-5749fece1bbc_webp_original.webp" class="rounded-lg object-cover">
+                <img src="assets/Image4/20250810_113920.jpg" class="rounded-lg object-cover">
+                <img src="assets/Image4/20250810_114001.jpg" class="rounded-lg object-cover">
+            </div>
+            <div class="p-4">
+                <h3 class="text-lg font-semibold mb-2">รายละเอียด</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    <p style="text-indent: 2.5em;">ใครกำลังมองหาที่แวะเที่ยวใกล้กรุงเทพฯ ฟีลธรรมชาติ แถมได้ชิมผลไม้สดๆ ช้อปผลไม้จากเกษตรกรโดยตรง ต้องมาที่ สวนลุงจ้อย จ.ลพบุรี เลยค่ะ! เพิ่งไปมาแล้วประทับใจ ลุงใจดีมาก 
+                        อินทผาลัมมีให้เลือกหลากหลาย เลยอยากจะมาป้ายยาให้ทุกคนได้ตามรอยกัน
+               </p>
+               <p style="text-indent: 2.5em;">สวนลุงจ้อยเป็นสวนอินทผาลัมขนาดใหญ่ ที่นี่มีอินทผาลัมหลากหลายสายพันธุ์ให้เลือกชิมกันแบบสดๆ ทั้งบาฮี โคไนซี่ อัมเอ็ดดาฮาน  บอกเลยว่า หวาน กรอบ อร่อย ชื่นใจสุดๆ 
+               มีให้เลือกหลายแบบหลายราคา ชิมได้จนแน่ใจแล้วค่อยซื้อ ที่สำคัญคือที่สวนเค้าปลูกแบบปราศจากสารเคมี ปุ๋ยก็ใช้ปุ๋ยหมัก ไม่ใช้ยาฆ่าแมลงหรือสารเร่งความหวาน ทำให้มั่นใจในความปลอดภัยได้เลย 
+               ช้อปกลับไปฝากได้แบบดีต่อใจ ทั้งคุณภาพและราคา</p>
+             </p>
+            </div>
+        </div>
+    </div>
+    
+    <div id="damnoenSaduakModal" class="modal fixed inset-0 bg-black/70 flex items-center justify-center z-50">
+        <div class="bg-white rounded-2xl shadow-lg w-11/12 md:w-2/3 lg:w-1/2 max-h-[90vh] overflow-y-auto">
+            <div class="flex justify-between items-center p-4 border-b">
+                <h2 class="text-xl font-bold">บ้านหลบโจร</h2>
+                <button onclick="closeModal('damnoenSaduakModal')" class="text-gray-500 hover:text-red-500 text-2xl">&times;</button>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 p-4">
+                <img src="assets/Image5/20250810_120046.jpg" class="rounded-lg object-cover">
+                <img src="assets/Image5/20250810_120200.jpg" class="rounded-lg object-cover">
+                <img src="assets/Image5/20250810_120234.jpg" class="rounded-lg object-cover">
+                <img src="assets/Image5/20250810_121105.jpg" class="rounded-lg object-cover">
+            </div>
+            <div class="p-4">
+                <h3 class="text-lg font-semibold mb-2">รายละเอียด</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    <p style="text-indent: 2.5em;">ไปชมบ้านไทยแบบโบราณ ตั้งอยู่ริมฝั่งคลอง ตัวบ้านหลังใหญ่ งดงาม คลาสสิค ภายในบ้านที่มีช่องสำหรับหลบโจรด้วย ทายาทของบ้านเล่าให้ฟังว่า 
+                        หลุมหลบโจร เคยได้ใช้งานจริง 1ครั้ง ในปี2514 ตอนนั้นโจรเสือปล้นกำลังระบาด แต่โจรไม่ได้อะไรไปเลย เพราะมีหลุมหลบโจรนี่แหละ</p>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="sukhothaiModal" class="modal fixed inset-0 bg-black/70 flex items-center justify-center z-50">
+        <div class="bg-white rounded-2xl shadow-lg w-11/12 md:w-2/3 lg:w-1/2 max-h-[90vh] overflow-y-auto">
+            <div class="flex justify-between items-center p-4 border-b">
+                <h2 class="text-xl font-bold">วัดห้วยแก้ว</h2>
+                <button onclick="closeModal('sukhothaiModal')" class="text-gray-500 hover:text-red-500 text-2xl">&times;</button>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 p-4">
+                <img src="assets/Image6/1mi68224x8ylve4nxBA7D_W_640_0_R5_Q80.webp" class="rounded-lg object-cover">
+                <img src="assets/Image6/1mi6b224x8ylwurhqC857_W_640_0_R5_Q80.webp" class="rounded-lg object-cover">
+                <img src="assets/Image6/20250722_150443.jpg" class="rounded-lg object-cover">
+                <img src="assets/Image6/Baner.jpg" class="rounded-lg object-cover">
+            </div>
+            <div class="p-4">
+                <h3 class="text-lg font-semibold mb-2">รายละเอียด</h3>
+                <p class="text-gray-700 leading-relaxed">
+                      <p style="text-indent: 2.5em;">วัดห้วยแก้ว ตั้งอยู่ที่ ตำบลมหาสอน อำเภอบ้านหมี่ จังหวัดลพบุรี เป็นวัดที่มีการผสมผสานสถาปัตยกรรมขอมทั้งแบบไทย เขมร และเมียนม่าเข้าไว้ด้วยกัน 
+                      โครงสร้างคือเจดีย์ย่อมุมไม้สิบสองแบบสุโขทัย แต่ลวยลายที่อยู่รอบนอกนั้น จะเป็นแบบของขอม มีอายุกว่า 140 ปี ไฮไลท์จะอยู่ที่ เจดีย์กลางน้ำ ที่ประดิษฐานพระพุทธรูปหยกเขียวหยกขาวอยู่ภายในเจดีย์อีกด้วย</p><br>
+                      <p style="text-indent: 2.5em;">บริเวณของ วัดห้วยแก้ว นั้น จะตั้งอยู่บนลำห้วยแก้ว เป็นที่มาของชื่อวัดนั่นเองค่ะ มีสิ่งศักดิ์สิทธิ์ภายในวัดให้กราบไหว้สักการะกันมากมายเลยค่ะ ทั้ง เจดีย์กลางน้ำ องค์พระเจดีย์มหาเมตารัตนะรังษี 
+                      ที่ภายในเจดีย์จะมีการตกแต่งให้เหมือนอยู่กลางป่า พอเข้าไปด้านในจะรู้สึกได้ถึงความสงบ เย็นสบาย นอกจากนี้รอบๆ เจดีย์ยังมีรูปนางอัปสรา (เทพธิดาบนสวรรค์) ที่ก่อด้วยอิฐศิลาแลงในท่าต่างๆ ประดับไว้ทั่วเจดีย์เลยค่ะ</p>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="pattayaBeachModal" class="modal fixed inset-0 bg-black/70 flex items-center justify-center z-50">
+        <div class="bg-white rounded-2xl shadow-lg w-11/12 md:w-2/3 lg:w-1/2 max-h-[90vh] overflow-y-auto">
+            <div class="flex justify-between items-center p-4 border-b">
+                <h2 class="text-xl font-bold">ลุ่มแม่น้ำบางขาม บ้านบางพึ่ง</h2>
+                <button onclick="closeModal('pattayaBeachModal')" class="text-gray-500 hover:text-red-500 text-2xl">&times;</button>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 p-4">
+                <img src="assets/Image7/a94972_837d0263aa88444bb9695d8255505a62~mv2_d_6000_4000_s_4_2.avif" class="rounded-lg object-cover">
+                <img src="assets/Image7/image1.png" class="rounded-lg object-cover">
+                <img src="assets/Image7/image2.png" class="rounded-lg object-cover">
+                <img src="assets/Image7/image3.png" class="rounded-lg object-cover">
+            </div>
+            <div class="p-4">
+                <h3 class="text-lg font-semibold mb-2">รายละเอียด</h3>
+                <p class="text-gray-700 leading-relaxed">
+                     <p style="text-indent: 2.5em;">ตั้งอยู่หมู่ 1 ต.บางพึ่ง อำเภอบ้านหมี่ จ.ลพบุรี เป็นทางสัญจรเสมือนสายโลหิตสำคัญของชาวบางพึ่ง มีลำคลองสาขาต่างๆ 
+                     ไหลลัดเลาะไปตามท้องทุ่งทำให้ชาวบ้านหมี่อุดมสมบูรณ์ สามารถจับปลาเล็ก ๆ พวกปลาสร้อย ปลาซ่า ปลาตะเพียน ในอดีตจับปลาริมน้ำกลายเป็นประมงพื้นบ้านที่ทำเป็นอาชีพ</p>
+                     <p style="text-indent: 2.5em;">วัดคุ้งทาเลา มีสัญลักษณ์สะดุดตา ด้วยสถาปัตยกรรมปูนทั้งสองด้านเป็นตัวหนุมานอ้าปาก เด่นสง่าประดับกระจกสีสวยสะดุดตา 
+                     ภายในพระอุโบสถเป็นภาพจิตกรรมฝาผนัง เป็นเรื่องเทศน์มหาชาติ และพระมาลัยในตำนาน</p>
+                     <p style="text-indent: 2.5em;">ด้านหลังวัดติดแม่น้ำบางขาม สองฝั่งคลองร่มรื่นต้นไม้ มองเห็นสวนไร่และบ้านไทยโบราณทรงมนิลา ที่เรียกกันว่าบ้านขนมปังขิง ซึ่งส่วนใหญ่เป็นคหบดีที่ร่ำรวยจากที่นา 
+                     และขายข้าวสาร นิยมสร้างกันมากช่วงปลาย ร. 6 ถึง ร. 8 โดยพัฒนามาจากเรือนปั้นหยา พัฒนาดัดแปลงมาจากทางตะวันตก มีเอกลักษณ์โดดเด่นด้วยการตกแต่งไม้แกะฉลุ หรือที่ชาวบ้านเรียกว่า ลายโปร่ง เพื่อให้ลมพัดผ่านได้</p>
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <div id="phanomRungModal" class="modal fixed inset-0 bg-black/70 flex items-center justify-center z-50">
+        <div class="bg-white rounded-2xl shadow-lg w-11/12 md:w-2/3 lg:w-1/2 max-h-[90vh] overflow-y-auto">
+            <div class="flex justify-between items-center p-4 border-b">
+                <h2 class="text-xl font-bold">บ้านสวนขวัญ</h2>
+                <button onclick="closeModal('phanomRungModal')" class="text-gray-500 hover:text-red-500 text-2xl">&times;</button>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 p-4">
+                <img src="assets/Image8/20250810_100848.jpg" class="rounded-lg object-cover">
+                <img src="assets/Image8/20250810_101213.jpg" class="rounded-lg object-cover">
+                <img src="assets/Image8/image1.png" class="rounded-lg object-cover">
+                <img src="assets/Image8/image2.png" class="rounded-lg object-cover">
+            </div>
+            <div class="p-4">
+                <h3 class="text-lg font-semibold mb-2">รายละเอียด</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    	<p style="text-indent: 2.5em;">บ้านสวนขวัญเป็นแหล่งท่องเที่ยวนววิถี เกษตรชุมชน ติดแม่น้ำบางขาม จัดกิจกรรมหลากหลาย ฝึกอาชีพ เรียนรู้เชิงเกษตร ท่องเที่ยวชุมชน โฮมสเตย์ จัดอบรม</p>
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <div id="monBridgeModal" class="modal fixed inset-0 bg-black/70 flex items-center justify-center z-50">
+        <div class="bg-white rounded-2xl shadow-lg w-11/12 md:w-2/3 lg:w-1/2 max-h-[90vh] overflow-y-auto">
+            <div class="flex justify-between items-center p-4 border-b">
+                <h2 class="text-xl font-bold">โรงสีไทยสมบูรณ์พัฒนา</h2>
+                <button onclick="closeModal('monBridgeModal')" class="text-gray-500 hover:text-red-500 text-2xl">&times;</button>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 p-4">
+                <img src="assets/Image9/bar.png" class="rounded-lg object-cover">
+                <img src="assets/Image9/image1.png" class="rounded-lg object-cover">
+             
+            </div>
+            <div class="p-4">
+                <h3 class="text-lg font-semibold mb-2">รายละเอียด</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    เป็นแหล่งสถานที่ ที่ร่วมรวมของโบราณ และของเก่าๆ ที่ผ่านมานานหลายปีไว้เป็นสถานที่ท่องเที่ยงอีก 1 ที่ควรจะมาชม
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- ป้ายลอยมุมขวาล่าง -->
+  <div class="floating-badge" id="fbFloatingBadge" aria-live="polite">
+    <a
+      href="https://www.facebook.com/profile.php?id=100063675975899&rdid=FZqGNPgOrvgVZhFR&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1LsGyfkioP%2F#"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="ไปยังเพจ Facebook"
+    >
+      <!-- ไอคอน Facebook (SVG) -->
+      <svg class="fb-icon" viewBox="0 0 24 24" aria-hidden="true">
+        <path fill="#1877F2" d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.093 10.125 24v-8.437H7.078v-3.49h3.047V9.413c0-3.017 1.792-4.687 4.533-4.687 1.312 0 2.686.235 2.686.235v2.953h-1.514c-1.492 0-1.955.928-1.955 1.88v2.249h3.328l-.532 3.49H13.875V24C19.612 23.093 24 18.1 24 12.073z"/>
+      </svg>
+      <span>ถ้าจะมาเที่ยวบ้านมหาสอนต้องทำการติดต่อจองล่วงหน้าได้ที่เพจเฟสบุ๊ค [คลิก] </span>
+    </a>
+    <button class="close-btn" aria-label="ปิดการแจ้งเตือน" title="ปิด">×</button>
+  </div>
+   
+
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4 text-center">
+            <h3 class="text-2xl font-bold mb-4">การท่องเที่ยวล่องแพและศิลปะวัฒนธรรมวิถีชุมชนบ้านมหาสอน</h3>
+            <p class="text-gray-400 mb-6">ค้นพบความงามของจังหวัดลพบุรีในทุกมุมมอง</p>
+            <div class="flex justify-center gap-6 text-sm text-gray-400">
+            
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.add('is-open');
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('is-open');
+        }
+
+        document.addEventListener('click', (event) => {
+            const modals = document.querySelectorAll('.modal.is-open');
+            modals.forEach(modal => {
+                if (!modal.contains(event.target) && !event.target.closest('[onclick^="openModal"]')) {
+                    modal.classList.remove('is-open');
+                }
+            });
+        });
+    </script>
+
+    <script>
+  // ปุ่มปิดป้ายลอย
+  document.querySelector('.floating-badge .close-btn')
+    .addEventListener('click', function () {
+      const badge = document.getElementById('fbFloatingBadge');
+      badge.style.transition = 'opacity .2s ease, transform .2s ease';
+      badge.style.opacity = '0';
+      badge.style.transform = 'translateY(8px)';
+      setTimeout(() => badge.remove(), 200);
+    });
+</script>
+</body>
+</html>
